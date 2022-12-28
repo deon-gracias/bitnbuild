@@ -3,7 +3,7 @@
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --first-color: #3F4793;
+  --first-color: #363c7a;
   --body-color: #efefef;
   --body-font: 'Roboto', sans-serif;
   --normal-font-size: 1.25rem;
@@ -40,7 +40,7 @@ a {
   border-radius: .8rem;
   transition: .4s;
   -webkit-tap-highlight-color: transparent;
-  box-shadow: rgba(84, 84, 85, 0.489) 0px 8px 24px;
+  box-shadow: rgba(84, 84, 85, 0.449) 0px 8px 24px;
 }
 
 .button:hover{
