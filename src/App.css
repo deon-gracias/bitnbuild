@@ -70,7 +70,13 @@
 html{
   scroll-behavior: smooth;
 }
-
+.btnhack{
+  height: 44px; width: 312px;
+  cursor: pointer;
+}
+#apply-button{
+  height: 4rem;
+}
 body,
 button,
 input,
