@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react';
 import './App.css';
-import gif from './home.gif';
-import dev from './dev.png';
-import about from './about.png';
-import edu from './edu.jpg';
-import devfolio from './Devfolio_Logo-Colored.png';
-import polygon from './Polygon_Logo-Colored@2x.png'
-import solana from './Solana-Colored.png';
-import whitetext from './Filecoin Coloured White Text.png';
-import replit from './Replit-light-background.png';
+import gif from './assets/home.gif';
+import about from './assets/about.png';
+import About2 from "./assets/about2.png"
+import edu from './assets/edu.jpg';
+import devfolio from './assets/Devfolio_Logo-Colored.png';
+import polygon from './assets/Polygon_Logo-Colored@2x.png'
+import solana from './assets/Solana-Colored.png';
+import whitetext from './assets/Filecoin Coloured White Text.png';
+import replit from './assets/Replit-light-background.png';
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
@@ -99,12 +99,18 @@ function scrollActive(){
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 
 function App() {
-  return (
- 
-  
+        useEffect(() => {
+          const script = document.createElement('script');
+          script.src = 'https://apply.devfolio.co/v2/sdk.js';
+          script.async = true;
+          script.defer = true;
+          document.body.appendChild(script);
+          return () => {
+            document.body.removeChild(script);
+          }
+        }, []);
+  return ( 
      <>
-   
- 
      <header className="header" id="header">
         <nav className="nav container">
           <a href="#" className="nav__logo">
@@ -151,15 +157,16 @@ function App() {
                 Prize pool of INR 1,20,000+
               </h1>
           
-             <a href="https://bit-n-build.devfolio.co/"   >
-             <div id='ppbtn'
-    
-	className="apply-button btnhack" 
-	data-hackathon-slug="bit-n-build" 
-	data-button-theme="dark"
-></div>
-              </a>
-              
+            {/* <a href="https://bit-n-build.devfolio.co/">
+             <div id='ppbtn' className="apply-button btnhack" data-hackathon-slug="bit-n-build" data-button-theme="dark">
+             </div>
+            </a> */}
+            <div 
+              class="apply-button" 
+              data-hackathon-slug="bit-n-build" 
+              data-button-theme="dark">                
+            </div>
+                         
             </div>
           </div>
         </section>
@@ -306,7 +313,7 @@ function App() {
         </section>
         <section className="about section container" id="about">
           <div className="about__container grid">
-            <img src="assets/img/about2.png" alt="" className="about__img2" />
+            <img src={About2} alt="" className="about__img2" />
             <div className="about__data">
               <h2 className="section__title about__title">
                 Let's Build!
