@@ -3,8 +3,12 @@ import './App.css';
 import gif from './home.gif';
 import dev from './dev.png';
 import about from './about.png';
-
-
+import edu from './edu.jpg';
+import devfolio from './Devfolio_Logo-Colored.png';
+import polygon from './Polygon_Logo-Colored@2x.png'
+import solana from './Solana-Colored.png';
+import whitetext from './Filecoin Coloured White Text.png';
+import replit from './Replit-light-background.png';
  function func(){
   document.getElementsByTagName("button").disabled = false;
 }
@@ -342,7 +346,7 @@ function App() {
               <br />
               <br />
               <br />
-              <img src="./assets/img/edu.jpg" style={{scale: '2.2'}} alt="" className="product__img" />
+              <img src={edu} style={{scale: '2.2'}} alt="" className="product__img" />
             </article>
             <br />
             <article className="product__card">
@@ -350,11 +354,11 @@ function App() {
               <br />
               <br />
               <br />
-              <img src="./assets/img/Devfolio_Logo-Colored.png" style={{scale: '2.2'}} alt="" className="product__img" />
+              <img src={devfolio} style={{scale: '2.2'}} alt="" className="product__img" />
             </article>
             <br />
             <article className="product__card">
-              <img src="./assets/img/Polygon_Logo-Colored@2x.png" style={{scale: '2.2'}} alt="" className="product__img" />
+              <img src={polygon} style={{scale: '2.2'}} alt="" className="product__img" />
               <br />
             </article>
             <br />
@@ -363,15 +367,15 @@ function App() {
               <br />
               <br />
               <br />
-              <img src="./assets/img/Solana-Colored.png" style={{scale: '2.2'}} alt="" className="product__img" />
+              <img src={solana} style={{scale: '2.2'}} alt="" className="product__img" />
             </article>
             <br />
             <article className="product__card">
-              <img src="./assets/img/Filecoin Coloured White Text.png" style={{scale: '2.2'}} alt="" className="product__img" />
+              <img src={whitetext} style={{scale: '2.2'}} alt="" className="product__img" />
             </article>
             <br />
             <article className="product__card">
-              <img src="./assets/img/Replit-light-background.png" style={{scale: '2.2'}} alt="" className="product__img" />
+              <img src={replit} style={{scale: '2.2'}} alt="" className="product__img" />
               <br />
             </article>
           </div>
