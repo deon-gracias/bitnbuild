@@ -394,6 +394,14 @@ function App() {
               <h3 class="product__title" style={{ fontSize: "1.5rem" }}>Blockchain</h3>
             </article>
 
+            <article class="product__card">
+              <div class="product__circle4"></div>
+
+              <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/robot_1f916.png" alt="" class="product__img" />
+
+              <h3 class="product__title" style={{ fontSize: "1.5rem" }}>AI/ML</h3>
+            </article>
+
           </div>
         </section>
 
@@ -415,13 +423,18 @@ function App() {
                     className="steps__card-number"
                     style={{ backgroundColor: "#550700" }}
                   >
-                    1st Prize : <br /> <b>₹ 20,000</b>
+                    1st Prize : <br /> <b>₹ 10,000</b>
                   </div>
                   <div
                     className="steps__card-number"
                     style={{ backgroundColor: "#550700" }}
                   >
-                    2nd Prize : <br /> <b>₹ 10,000</b>
+                    2nd Prize : <br /> <b>₹ 5,000</b>
+                  </div>
+                  <div className="steps__card-number"
+                    style={{ backgroundColor: "#550700" }}
+                  >
+                    3rd Prize : <br /> <b>₹ 2,000</b>
                   </div>
                 </div>
                 <h3 className="steps__card-title">Web / App Dev</h3>
@@ -432,10 +445,13 @@ function App() {
               >
                 <div className="grid">
                   <div className="steps__card-number">
-                    1st Prize : <br /> <b>₹ 20,000</b>
+                    1st Prize : <br /> <b>₹ 10,000</b>
                   </div>
                   <div className="steps__card-number">
-                    2nd Prize : <br /> <b>₹ 10,000</b>
+                    2nd Prize : <br /> <b>₹ 5,000</b>
+                  </div>
+                  <div className="steps__card-number">
+                    3rd Prize : <br /> <b>₹ 2,000</b>
                   </div>
                 </div>
                 <h3 className="steps__card-title">Open Innovation</h3>
@@ -457,8 +473,38 @@ function App() {
                   >
                     2nd Prize : <br /> <b>₹ 5,000</b>
                   </div>
+                  <div className="steps__card-number"
+                    style={{ backgroundColor: "#806002" }}
+                  >
+                    3rd Prize : <br /> <b>₹ 2,000</b>
+                  </div>
                 </div>
                 <h3 className="steps__card-title">Blockchain</h3>
+              </div>
+              <div
+                className="steps__card"
+                style={{ backgroundColor: "#0F9D58", textAlign: "center" }}
+              >
+                <div className="grid">
+                  <div
+                    className="steps__card-number"
+                    style={{ backgroundColor: "#025F32" }}
+                  >
+                    1st Prize : <br /> <b>₹ 10,000</b>
+                  </div>
+                  <div
+                    className="steps__card-number"
+                    style={{ backgroundColor: "#025F32" }}
+                  >
+                    2nd Prize : <br /> <b>₹ 5,000</b>
+                  </div>
+                  <div className="steps__card-number"
+                    style={{ backgroundColor: "#025F32" }}
+                  >
+                    3rd Prize : <br /> <b>₹ 2,000</b>
+                  </div>
+                </div>
+                <h3 className="steps__card-title">AI/ML</h3>
               </div>
             </div>
           </div>

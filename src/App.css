@@ -956,7 +956,7 @@ the website, in dark theme
   }
 
   .product__container {
-    grid-template-columns: repeat(3, 170px);
+    grid-template-columns: repeat(2, 170px);
     justify-content: center;
     column-gap: 5rem;
   }
@@ -1061,7 +1061,7 @@ the website, in dark theme
   }
 
   .steps__container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .steps__bg {
@@ -1078,7 +1078,7 @@ the website, in dark theme
 
   .product__container {
     padding: 4rem 0;
-    grid-template-columns: repeat(3, 185px);
+    grid-template-columns: repeat(4, 185px);
     gap: 4rem 6rem;
   }
 
