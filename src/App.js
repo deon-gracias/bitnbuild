@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import gif from './assets/home.gif';
 import about from './assets/about.png';
@@ -11,110 +11,110 @@ import whitetext from './assets/Filecoin Coloured White Text.png';
 import replit from './assets/Replit-light-background.png';
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+  navToggle = document.getElementById('nav-toggle'),
+  navClose = document.getElementById('nav-close')
 
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
-if(navToggle){
-    navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu')
-    })
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.add('show-menu')
+  })
 }
 
 /*===== MENU HIDDEN =====*/
 /* Validate if constant exists */
-if(navClose){
-    navClose.addEventListener('click', () =>{
-        navMenu.classList.remove('show-menu')
-    })
+if (navClose) {
+  navClose.addEventListener('click', () => {
+    navMenu.classList.remove('show-menu')
+  })
 }
 
 /*=============== REMOVE MENU MOBILE ===============*/
 const navLink = document.querySelectorAll('.nav__link')
 
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show-menu')
+function linkAction() {
+  const navMenu = document.getElementById('nav-menu')
+  // When we click on each nav__link, we remove the show-menu class
+  navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
-function scrollHeader(){
-    const header = document.getElementById('header')
-    // When the scroll is greater than 80 viewport height, add the scroll-header class to the header tag
-    if(this.scrollY >= 80) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
+function scrollHeader() {
+  const header = document.getElementById('header')
+  // When the scroll is greater than 80 viewport height, add the scroll-header class to the header tag
+  if (this.scrollY >= 80) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
 }
 window.addEventListener('scroll', scrollHeader)
 
 /*=============== QUESTIONS ACCORDION ===============*/
 const accordionItems = document.querySelectorAll('.questions__item')
 
-accordionItems.forEach((item) =>{
-    const accordionHeader = item.querySelector('.questions__header')
+accordionItems.forEach((item) => {
+  const accordionHeader = item.querySelector('.questions__header')
 
-    accordionHeader.addEventListener('click', () =>{
-        const openItem = document.querySelector('.accordion-open')
+  accordionHeader.addEventListener('click', () => {
+    const openItem = document.querySelector('.accordion-open')
 
-        toggleItem(item)
+    toggleItem(item)
 
-        if(openItem && openItem!== item){
-            toggleItem(openItem)
-        }
-    })
+    if (openItem && openItem !== item) {
+      toggleItem(openItem)
+    }
+  })
 })
 
-const toggleItem = (item) =>{
-    const accordionContent = item.querySelector('.questions__content')
+const toggleItem = (item) => {
+  const accordionContent = item.querySelector('.questions__content')
 
-    if(item.classList.contains('accordion-open')){
-        accordionContent.removeAttribute('style')
-        item.classList.remove('accordion-open')
-    }else{
-        accordionContent.style.height = accordionContent.scrollHeight + 'px'
-        item.classList.add('accordion-open')
-    }
+  if (item.classList.contains('accordion-open')) {
+    accordionContent.removeAttribute('style')
+    item.classList.remove('accordion-open')
+  } else {
+    accordionContent.style.height = accordionContent.scrollHeight + 'px'
+    item.classList.add('accordion-open')
+  }
 
 }
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
 
-function scrollActive(){
-    const scrollY = window.pageYOffset
+function scrollActive() {
+  const scrollY = window.pageYOffset
 
-    sections.forEach(current =>{
-        const sectionHeight = current.offsetHeight,
-              sectionTop = current.offsetTop - 58,
-              sectionId = current.getAttribute('id')
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight,
+      sectionTop = current.offsetTop - 58,
+      sectionId = current.getAttribute('id')
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
-        }else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
-        }
-    })
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+    } else {
+      document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+    }
+  })
 }
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 
 function App() {
-        useEffect(() => {
-          const script = document.createElement('script');
-          script.src = 'https://apply.devfolio.co/v2/sdk.js';
-          script.async = true;
-          script.defer = true;
-          document.body.appendChild(script);
-          return () => {
-            document.body.removeChild(script);
-          }
-        }, []);
-  return ( 
-     <>
-     <header className="header" id="header">
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    }
+  }, []);
+  return (
+    <>
+      <header className="header" id="header">
         <nav className="nav container">
           <a href="#" className="nav__logo">
-            <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/large-purple-square_1f7ea.png" style={{width: '22px'}} /> BIT N BUILD
+            <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/large-purple-square_1f7ea.png" style={{ width: '22px' }} /> BIT N BUILD
           </a>
           <div className="nav__menu" id="nav-menu">
             <ul className="nav__list">
@@ -154,70 +154,124 @@ function App() {
             <img img src={gif} alt="" className="home__img" />
             <div className="home__data">
               <h1 className="home__title">
-                Prize pool of INR 1,20,000+
+                Prize pool of INR 75,000+
               </h1>
-          
-            {/* <a href="https://bit-n-build.devfolio.co/">
+
+              {/* <a href="https://bit-n-build.devfolio.co/">
              <div id='ppbtn' className="apply-button btnhack" data-hackathon-slug="bit-n-build" data-button-theme="dark">
              </div>
             </a> */}
-            <div 
-              class="apply-button" 
-              data-hackathon-slug="bit-n-build" 
-              data-button-theme="dark">                
-            </div>
-                         
+              <div
+                class="apply-button"
+                data-hackathon-slug="bit-n-build"
+                data-button-theme="dark">
+              </div>
+
             </div>
           </div>
         </section>
         <section className="about section container" id="about">
           <div className="about__container grid">
-          <img src="../home.gif" alt="" class="home__img"/>
+            <img src="../home.gif" alt="" class="home__img" />
             <img src={about} alt="" className="about__img" />
             <div className="about__data">
               <h2 className="section__title about__title">
                 About  Us
               </h2>
               <p className="about__description">
-                Bit N Build is a 24 hour hackathon organized by Google Developer Students Club with endless creativity. Students are challenged to further what they know by creating projects following their passions. Spending time on projects outside the classroom is the best way to not only learn what you love, but also find new interests. In a universe of infinite possibilities, you have 24 hours to innovate and show us what you got!
+                Bit N Build is a 24 hour offline hackathon organized by Google Developer Students Club with endless
+                creativity. Students are challenged to further what they know by creating projects following
+                their passions. Spending time on projects outside the classroom is the best way to not only
+                learn what you love, but also find new interests.
               </p>
-              
-            </div> --&gt;
-            <a href="#" className="button--link button--flex">
-              TRACKS <i className="ri-arrow-right-down-line button__icon" />
-            </a> 
-          </div>
-        </section>
-        <section className="steps section container">
-          <div className="steps__bg">
-            <h2 className="section__title-center steps__title">
-              Agenda: 28th January
-            </h2>
-            <div className="steps__container grid">
-              <div className="steps__card">
-                <h3 className="steps__card-title">11:00-12:30</h3>
-                <p className="steps__card-description">
-                  Inauguration
+              <div class="about__details">
+                <p class="about__details-description">
+                  <i class="ri-map-pin-2-fill about__details-icon"></i>
+                  Fr. Conceicao Rodrigues College of Engineering.
+                </p>
+                <p class="about__details-description">
+                  <i class="ri-timer-fill about__details-icon"></i>
+                  Deadline: 19:00, 26th January
+                </p>
+                <p class="about__details-description">
+                  <i class="ri-group-fill about__details-icon"></i>
+                  2-4 members per team
                 </p>
               </div>
-              <div className="steps__card">
-                <h3 className="steps__card-title">14:00</h3>
-                <p className="steps__card-description">
-                  Hackathon Begins!
+
+              <a href="https://bit-n-build.devfolio.co/" class="button--link button--flex">
+                Register <i class="ri-arrow-right-down-line button__icon"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="steps section container">
+          <div class="steps__bg">
+            <h2 class="section__title-center steps__title">
+              Agenda: 21st - 26th January
+            </h2>
+
+            <div class="steps__container grid">
+              <div class="steps__card">
+                <div class="steps__card-number">21st January</div>
+                <h3 class="steps__card-title">18:00</h3>
+                <p class="steps__card-description">Idea Submission Begins (Round 1)</p>
+              </div>
+              <div class="steps__card">
+                <div class="steps__card-number">24th January</div>
+                <h3 class="steps__card-title">23:59</h3>
+                <p class="steps__card-description">Idea Submission Ends (Round 1)</p>
+              </div>
+              <div class="steps__card">
+                <div class="steps__card-number">26th January</div>
+                <h3 class="steps__card-title">19:00</h3>
+                <p class="steps__card-description">Announcement of participants short-listed for <b>offline
+                  hackathon at Fr. CRCE</b> (Round 2)</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="steps section container">
+          <div class="steps__bg">
+            <h2 class="section__title-center steps__title">
+              Agenda: 28th January
+            </h2>
+
+            <div class="steps__container grid">
+              <div class="steps__card">
+                <h3 class="steps__card-title">14:00-15:00</h3>
+                <p class="steps__card-description">
+                  Inauguration ceremony of Offline Hackathon
                 </p>
-              </div> 
-              <div className="steps__card">
-                <h3 className="steps__card-title">18:00-20:00</h3>
-                <p className="steps__card-description">
+              </div>
+
+              <div class="steps__card">
+                <h3 class="steps__card-title">15:00</h3>
+                <p class="steps__card-description">
+                  Offline Hackathon Begins!
+                </p>
+              </div>
+
+              <div class="steps__card">
+                <h3 class="steps__card-title">17:00-18:00</h3>
+                <p class="steps__card-description">
+                  Free Snacks. To keep you fresh!
+                </p>
+              </div>
+
+              <div class="steps__card">
+                <h3 class="steps__card-title">18:00-20:00</h3>
+                <p class="steps__card-description">
                   Mentoring Round
                 </p>
-              </div> 
-              <div className="steps__card">
-                <h3 className="steps__card-title">20:00-21:30</h3>
-                <p className="steps__card-description">
+              </div>
+
+              <div class="steps__card">
+                <h3 class="steps__card-title">20:00-21:30</h3>
+                <p class="steps__card-description">
                   Free Dinner. Yay!
                 </p>
-              </div> 
+              </div>
             </div>
           </div>
         </section>
@@ -243,75 +297,220 @@ function App() {
                 <p className="steps__card-description">
                   Lunch, it's free ofcourse!
                 </p>
-              </div> 
+              </div>
               <div className="steps__card">
                 <h3 className="steps__card-title">14:00-16:00</h3>
                 <p className="steps__card-description">
                   Final Judging Round
                 </p>
-              </div> 
+              </div>
               <div className="steps__card">
                 <h3 className="steps__card-title">16:30</h3>
                 <p className="steps__card-description">
                   Finally! Winners are announced.
                 </p>
-              </div> 
+              </div>
             </div>
           </div>
         </section>
-        <section className="product section container" id="tracks">
-          <h2 className="section__title-center">
-            TRACKS
-          </h2>
-          <div className="product__container grid">
-            <article className="product__card">
-              <div className="product__circle1" />
-              <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/globe-with-meridians_1f310.png" alt="" className="product__img" />
-              <h3 className="product__title" style={{fontSize: '1.5rem'}}>Web Dev</h3>
-            </article>
-            <article className="product__card">
-              <div className="product__circle2" />
-              <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/mobile-phone_1f4f1.png" alt="" className="product__img" />
-              <h3 className="product__title" style={{fontSize: '1.5rem'}}>App Dev</h3>
-            </article>
-            <article className="product__card">
-              <div className="product__circle3" />
-              <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/alien-monster_1f47e.png" alt="" className="product__img" />
-              <h3 className="product__title" style={{fontSize: '1.5rem'}}>Blockchain</h3>
-            </article>
-            <article className="product__card">
-              <div className="product__circle4" />
-              <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/robot_1f916.png" alt="" className="product__img" />
-              <h3 className="product__title" style={{fontSize: '1.5rem'}}>AI</h3>
-            </article>
+        <section class="steps section container">
+          <div class="steps__bg">
+            <h2 class="section__title-center steps__title">
+              Agenda: 29th January
+            </h2>
+
+            <div class="steps__container grid">
+              <div class="steps__card">
+                <h3 class="steps__card-title">08:00-10:00</h3>
+                <p class="steps__card-description">
+                  Breakfast is on us!
+                </p>
+              </div>
+
+              <div class="steps__card">
+                <h3 class="steps__card-title">08:00-10:00</h3>
+                <p class="steps__card-description">
+                  Judging Round 1
+                </p>
+              </div>
+
+              <div class="steps__card">
+                <h3 class="steps__card-title">10:30</h3>
+                <p class="steps__card-description">
+                  Results announced for judging round 1! Qualified teams move to the final round!
+                </p>
+              </div>
+
+              <div class="steps__card">
+                <h3 class="steps__card-title">13:00-14:00</h3>
+                <p class="steps__card-description">
+                  Lunch, it's free ofcourse! (Only teams that qualified for the final judging round)
+                </p>
+              </div>
+
+              <div class="steps__card">
+                <h3 class="steps__card-title">15:00-17:00</h3>
+                <p class="steps__card-description">
+                  Final Judging Round
+                </p>
+              </div>
+
+              <div class="steps__card">
+                <h3 class="steps__card-title">18:00</h3>
+                <p class="steps__card-description">
+                  Finally! Winners are announced.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
-        <section className="steps section container" style={{marginTop: '-5rem'}}>
-          <div className="steps__bg" style={{backgroundColor: '#00000000'}}>
-            <h2 className="section__title-center steps__title" style={{color: '#000000'}}>
+        <section class="product section container" id="tracks">
+          <h2 class="section__title-center">
+            TRACKS
+          </h2>
+
+          <div class="product__container grid">
+            <article class="product__card">
+              <div class="product__circle1"></div>
+
+              <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/globe-with-meridians_1f310.png" alt="" class="product__img" />
+
+              <h3 class="product__title" style={{ fontSize: "1.5rem" }}>Web / App Dev</h3>
+            </article>
+
+            <article class="product__card">
+              <div class="product__circle2"></div>
+
+              <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/rocket_1f680.png" alt="" class="product__img" />
+
+              <h3 class="product__title" style={{ fontSize: "1.5rem" }}>Open Innovation</h3>
+            </article>
+
+            <article class="product__card">
+              <div class="product__circle3"></div>
+
+              <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/alien-monster_1f47e.png" alt="" class="product__img" />
+
+              <h3 class="product__title" style={{ fontSize: "1.5rem" }}>Blockchain</h3>
+            </article>
+
+            <article class="product__card">
+              <div class="product__circle4"></div>
+
+              <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/robot_1f916.png" alt="" class="product__img" />
+
+              <h3 class="product__title" style={{ fontSize: "1.5rem" }}>AI/ML</h3>
+            </article>
+
+          </div>
+        </section>
+
+        <section className="steps section container" style={{ marginTop: "-5rem" }}>
+          <div className="steps__bg" style={{ backgroundColor: "#00000000" }}>
+            <h2
+              className="section__title-center steps__title"
+              style={{ color: "#000000" }}
+            >
               PRIZES
             </h2>
             <div className="steps__container grid">
-              <div className="steps__card" style={{backgroundColor: '#EA4335', textAlign: 'center'}}>
-                <div className="steps__card-number">INR 30,000</div>
-                <h3 className="steps__card-title" style={{fontSize: '1.5rem', textAlign: 'left'}}>Web Dev</h3>
+              <div
+                className="steps__card"
+                style={{ backgroundColor: "#EA4335", textAlign: "center" }}
+              >
+                <div className="grid">
+                  <div
+                    className="steps__card-number"
+                    style={{ backgroundColor: "#550700" }}
+                  >
+                    1st Prize : <br /> <b>₹ 10,000</b>
+                  </div>
+                  <div
+                    className="steps__card-number"
+                    style={{ backgroundColor: "#550700" }}
+                  >
+                    2nd Prize : <br /> <b>₹ 5,000</b>
+                  </div>
+                  <div className="steps__card-number"
+                    style={{ backgroundColor: "#550700" }}
+                  >
+                    3rd Prize : <br /> <b>₹ 2,000</b>
+                  </div>
+                </div>
+                <h3 className="steps__card-title">Web / App Dev</h3>
               </div>
-              <div className="steps__card" style={{backgroundColor: '#4285F4', textAlign: 'center'}}>
-                <div className="steps__card-number">INR 30,000</div>
-                <h3 className="steps__card-title" style={{fontSize: '1.5rem', textAlign: 'left'}}>App Dev</h3>
+              <div
+                className="steps__card"
+                style={{ backgroundColor: "#4285F4", textAlign: "center" }}
+              >
+                <div className="grid">
+                  <div className="steps__card-number">
+                    1st Prize : <br /> <b>₹ 10,000</b>
+                  </div>
+                  <div className="steps__card-number">
+                    2nd Prize : <br /> <b>₹ 5,000</b>
+                  </div>
+                  <div className="steps__card-number">
+                    3rd Prize : <br /> <b>₹ 2,000</b>
+                  </div>
+                </div>
+                <h3 className="steps__card-title">Open Innovation</h3>
               </div>
-              <div className="steps__card" style={{backgroundColor: '#FBBC04', textAlign: 'center'}}>
-                <div className="steps__card-number">INR 30,000</div>
-                <h3 className="steps__card-title" style={{fontSize: '1.5rem', textAlign: 'left'}}>Blockchain</h3>
+              <div
+                className="steps__card"
+                style={{ backgroundColor: "#FBBC04", textAlign: "center" }}
+              >
+                <div className="grid">
+                  <div
+                    className="steps__card-number"
+                    style={{ backgroundColor: "#806002" }}
+                  >
+                    1st Prize : <br /> <b>₹ 10,000</b>
+                  </div>
+                  <div
+                    className="steps__card-number"
+                    style={{ backgroundColor: "#806002" }}
+                  >
+                    2nd Prize : <br /> <b>₹ 5,000</b>
+                  </div>
+                  <div className="steps__card-number"
+                    style={{ backgroundColor: "#806002" }}
+                  >
+                    3rd Prize : <br /> <b>₹ 2,000</b>
+                  </div>
+                </div>
+                <h3 className="steps__card-title">Blockchain</h3>
               </div>
-              <div className="steps__card" style={{backgroundColor: '#0F9D58', textAlign: 'center'}}>
-                <div className="steps__card-number">INR 30,000</div>
-                <h3 className="steps__card-title" style={{fontSize: '1.5rem', textAlign: 'left'}}>AI</h3>
+              <div
+                className="steps__card"
+                style={{ backgroundColor: "#0F9D58", textAlign: "center" }}
+              >
+                <div className="grid">
+                  <div
+                    className="steps__card-number"
+                    style={{ backgroundColor: "#025F32" }}
+                  >
+                    1st Prize : <br /> <b>₹ 10,000</b>
+                  </div>
+                  <div
+                    className="steps__card-number"
+                    style={{ backgroundColor: "#025F32" }}
+                  >
+                    2nd Prize : <br /> <b>₹ 5,000</b>
+                  </div>
+                  <div className="steps__card-number"
+                    style={{ backgroundColor: "#025F32" }}
+                  >
+                    3rd Prize : <br /> <b>₹ 2,000</b>
+                  </div>
+                </div>
+                <h3 className="steps__card-title">AI/ML</h3>
               </div>
             </div>
           </div>
         </section>
-        <section className="about section container" id="about">
+
+        {/* <section className="about section container" id="about">
           <div className="about__container grid">
             <img src={About2} alt="" className="about__img2" />
             <div className="about__data">
@@ -319,7 +518,7 @@ function App() {
                 Let's Build!
               </h2>
               <p className="about__description">
-                Google Developer Students Club of Usha Mittal Institute of Technology, Fr. Conceicao Rodrigues College of Engineering and K.J. Somaiya Institute of Technology are collaborating together to bring you the first ever flagship hackathon.  
+                Google Developer Students Club of Usha Mittal Institute of Technology, Fr. Conceicao Rodrigues College of Engineering and K.J. Somaiya Institute of Technology are collaborating together to bring you the first ever flagship hackathon.
               </p>
               <div className="about__details">
                 <p className="about__details-description">
@@ -337,12 +536,15 @@ function App() {
               </div>
               <a href="#" className="button--link button--flex">
                 Register <i className="ri-arrow-right-down-line button__icon" />
-              </a> 
+              </a>
             </div>
           </div>
-        </section>
-        <section className="questions section" id="faqs" style={{marginTop: '5rem'}}>
-          <h2 className="section__title-center questions__title container" style={{color: '#ffffff'}}>
+        </section> */}
+        <section className="questions section" id="faqs" style={{ marginTop: "5rem" }}>
+          <h2
+            className="section__title-center questions__title container"
+            style={{ color: "#ffffff" }}
+          >
             Some common questions <br /> were often asked
           </h2>
           <div className="questions__container container grid">
@@ -350,40 +552,39 @@ function App() {
               <div className="questions__item">
                 <header className="questions__header">
                   <i className="ri-add-line questions__icon" />
-                  <h3 className="questions__item-title">
-                    What is a hackathon
-                  </h3>
+                  <h3 className="questions__item-title">What is a hackathon</h3>
                 </header>
                 <div className="questions__content">
-                  <p className="questions__description" style={{color: '#000000'}}>
-                    Hacking is a creative way to solve a problem, and hacka\
-                    thons are innovation marathons where students from around the country who have an interest in technology come together to learn, build &amp; share their creations over the course of a weekend in a relaxed and welcoming atmosphere.
+                  <p className="questions__description" style={{ color: "#000000" }}>
+                    Hacking is a creative way to solve a problem, and hackathons are
+                    innovation marathons where students from around the country who have
+                    an interest in technology come together to learn, build &amp; share
+                    their creations over the course of a weekend in a relaxed and
+                    welcoming atmosphere.
                   </p>
                 </div>
               </div>
               <div className="questions__item">
                 <header className="questions__header">
                   <i className="ri-add-line questions__icon" />
-                  <h3 className="questions__item-title">
-                    How many people per team?
-                  </h3>
+                  <h3 className="questions__item-title">How many people per team?</h3>
                 </header>
                 <div className="questions__content">
                   <p className="questions__description">
-                    Teams can range anywhere from 1-4 people. If you do not have a team before the event, worry not - you can find one on our handy Discord server.
+                    Teams can range anywhere from 2-4 people.
                   </p>
                 </div>
               </div>
               <div className="questions__item">
                 <header className="questions__header">
                   <i className="ri-add-line questions__icon" />
-                  <h3 className="questions__item-title">
-                    What does it cost?
-                  </h3>
+                  <h3 className="questions__item-title">What does it cost?</h3>
                 </header>
                 <div className="questions__content">
                   <p className="questions__description">
-                    Bit N Build is free for all hackers! We provide our hackers with tools, swags, and prizes without any cost through our generous sponsors.
+                    Bit N Build is free for all hackers! We provide our hackers with
+                    tools, swags, and prizes without any cost through our generous
+                    sponsors.
                   </p>
                 </div>
               </div>
@@ -396,20 +597,21 @@ function App() {
                 </header>
                 <div className="questions__content">
                   <p className="questions__description">
-                    Anyone is welcome to participate in this event. While experience coding and programming is a huge plus, teams will also need people with strong presentation skills and brilliant ideas.
+                    Anyone is welcome to participate in this event. While experience
+                    coding and programming is a huge plus, teams will also need people
+                    with strong presentation skills and brilliant ideas.
                   </p>
                 </div>
               </div>
               <div className="questions__item">
                 <header className="questions__header">
                   <i className="ri-add-line questions__icon" />
-                  <h3 className="questions__item-title">
-                    Will there be food?
-                  </h3>
+                  <h3 className="questions__item-title">Will there be food?</h3>
                 </header>
                 <div className="questions__content">
                   <p className="questions__description">
-                    Yes, delicious food and beverages will be provided throughout the event, courtesy of *sponsor name*.
+                    Yes, delicious food and beverages will be provided throughout the
+                    event.
                   </p>
                 </div>
               </div>
@@ -417,63 +619,85 @@ function App() {
             <div className="questions__item">
               <header className="questions__header">
                 <i className="ri-add-line questions__icon" />
-                <h3 className="questions__item-title">
-                  Who will be judging?
-                </h3>
+                <h3 className="questions__item-title">Who will be judging?</h3>
               </header>
               <div className="questions__content">
                 <p className="questions__description">
-                  The judge panel composition will be announced closer to the date of the hackathon.
+                  The judge panel composition will be announced closer to the date of
+                  the hackathon.
                 </p>
               </div>
             </div>
           </div>
         </section>
+
         <section className="product section container" id="sponsors">
-          <h2 className="section__title-center">
-            SPONSORS
-          </h2>
+          <h2 className="section__title-center">SPONSORS</h2>
+          {/* <p class="product__description">
+              Here are some selected plants from our showroom, all are in excellent 
+              shape and has a long life span. Buy and enjoy best quality.
+          </p> */}
           <div className="product__container grid" id="sponsorcontainer">
+            <h3 className="product__title sponsor__title">Title Sponsor</h3>
             <article className="product__card">
-              <h3 className="product__title" style={{fontSize: '1.3rem'}}>Title Sponsor</h3>
-              <br />
-              <br />
-              <br />
-              <img src={edu} style={{scale: '2.2'}} alt="" className="product__img" />
+              <img
+                src={edu}
+                style={{ scale: "2.2" }}
+                alt=""
+                className="product__img"
+              />
+            </article>
+            <br />
+            <h3 className="product__title sponsor__title">Platinum Sponsor</h3>
+            <article className="product__card">
+              <img
+                src={devfolio}
+                style={{ scale: "2.2" }}
+                alt=""
+                className="product__img"
+              />
             </article>
             <br />
             <article className="product__card">
-              <h3 className="product__title" style={{fontSize: '1.3rem'}}>Platinum Sponsor</h3>
-              <br />
-              <br />
-              <br />
-              <img src={devfolio} style={{scale: '2.2'}} alt="" className="product__img" />
+              <img
+                src={polygon}
+                style={{ scale: "2.2" }}
+                alt=""
+                className="product__img"
+              />
+            </article>
+            <br />
+            <h3 className="product__title sponsor__title">Silver Sponsor</h3>
+            <article className="product__card">
+              <img
+                src={solana}
+                style={{ scale: "2.2" }}
+                alt=""
+                className="product__img"
+              />
             </article>
             <br />
             <article className="product__card">
-              <img src={polygon} style={{scale: '2.2'}} alt="" className="product__img" />
-              <br />
+              <img
+                src={whitetext}
+                style={{ scale: "2.2" }}
+                alt=""
+                className="product__img"
+              />
             </article>
             <br />
             <article className="product__card">
-              <h3 className="product__title" style={{fontSize: '1.3rem'}}>Silver Sponsor</h3>
-              <br />
-              <br />
-              <br />
-              <img src={solana} style={{scale: '2.2'}} alt="" className="product__img" />
-            </article>
-            <br />
-            <article className="product__card">
-              <img src={whitetext} style={{scale: '2.2'}} alt="" className="product__img" />
-            </article>
-            <br />
-            <article className="product__card">
-              <img src={replit} style={{scale: '2.2'}} alt="" className="product__img" />
-              <br />
+              <img
+                src={replit}
+                style={{ scale: "2.2" }}
+                alt=""
+                className="product__img"
+              />
             </article>
           </div>
         </section>
-        <section className="contact section container" id="contact">                
+
+        <section className="contact section container" id="contact">
           <div className="contact__container grid">
             <div className="contact__box">
               <h2 className="section__title">
@@ -484,7 +708,7 @@ function App() {
                   <h3 className="contact__subtitle">Call us for instant support</h3>
                   <span className="contact__description">
                     <i className="ri-phone-line contact__icon" />
-                    +9326007088
+                    +91 90229 11441
                   </span>
                 </div>
                 <div className="contact__information">
@@ -496,19 +720,30 @@ function App() {
                 </div>
               </div>
             </div>
-            <form action className="contact__form">
+            <form action="" className="contact__form">
               <div className="contact__inputs">
                 <div className="contact__content">
                   <input type="email" placeholder=" " className="contact__input" />
-                  <label htmlFor className="contact__label">Email</label>
+                  <label htmlFor="" className="contact__label">
+                    Email
+                  </label>
                 </div>
                 <div className="contact__content">
                   <input type="text" placeholder=" " className="contact__input" />
-                  <label htmlFor className="contact__label">Subject</label>
+                  <label htmlFor="" className="contact__label">
+                    Subject
+                  </label>
                 </div>
                 <div className="contact__content contact__area">
-                  <textarea name="message" placeholder=" " className="contact__input" defaultValue={""} />                              
-                  <label htmlFor className="contact__label">Message</label>
+                  <textarea
+                    name="message"
+                    placeholder=" "
+                    className="contact__input"
+                    defaultValue={""}
+                  />
+                  <label htmlFor="" className="contact__label">
+                    Message
+                  </label>
                 </div>
               </div>
               <button className="button button--flex">
@@ -518,19 +753,28 @@ function App() {
             </form>
           </div>
         </section>
+
       </main>
       <div>
         <footer className="footer section">
           <div className="footer__container container grid">
             <div className="footer__content">
               <a href="#" className="footer__logo">
-                <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/large-purple-square_1f7ea.png" style={{width: '20px'}} /> BIT N BUILD
+                <img
+                  src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/large-purple-square_1f7ea.png"
+                  style={{ width: 20 }}
+                />{" "}
+                BIT N BUILD
               </a>
               <h3 className="footer__title">
                 If you would like to sponsor this hackathon, please reach out to us at
               </h3>
               <div className="footer__subscribe">
-                <input type="email" placeholder="bitnbuild@gmail.com" className="footer__input" />
+                <input
+                  type="email"
+                  placeholder="bitnbuild@gmail.com"
+                  className="footer__input"
+                />
                 <button className="button button--flex footer__button">
                   Sponsor
                   <i className="ri-arrow-right-up-line button__icon" />
@@ -540,34 +784,59 @@ function App() {
             <div className="footer__content">
               <h3 className="footer__title">Our Address</h3>
               <ul className="footer__data">
-                <li className="footer__information">Mumbai</li>
+                <li className="footer__information">
+                  Fr. Conceicao Rodrigues College of Engineering,
+                </li>
+                <li className="footer__information">
+                  Fr. Agnel Ashram, Bandstand Promenade,
+                </li>
+                <li className="footer__information">Mount Mary, Bandra West,</li>
+                <li className="footer__information"> Mumbai, Maharashtra 400050</li>
+                {/* <li class="footer__information">La Libertad - 43210</li>
+                  <li class="footer__information">123-456-789</li> */}
               </ul>
             </div>
             <div className="footer__content">
               <h3 className="footer__title">Contact Us</h3>
               <ul className="footer__data">
-                <li className="footer__information">+999 888 777</li>
+                <li className="footer__information">+91 90229 11441</li>
                 <div className="footer__social">
-                  <a href="https://www.instagram.com/bitnbuild" className="footer__social-link">
-                    <i className="ri-instagram-line" />
+                  {/* <a href="https://www.facebook.com/" class="footer__social-link">
+                          <i class="ri-facebook-fill"></i>
+                      </a> */}
+                  <a
+                    href="https://www.instagram.com/bitnbuild"
+                    className="footer__social-link"
+                  >
+                    <i className="ri-instagram-line" />{" "}
+                    <span className="footer__social-link-text">@bitnbuild</span>
                   </a>
+                  {/* <a href="https://twitter.com/" class="footer__social-link">
+                          <i class="ri-twitter-fill"></i>
+                      </a> */}
                 </div>
               </ul>
             </div>
             <div className="footer__content">
               <h3 className="footer__title">
-                In Collaboration With GDSC UMIT, GDSC CRCE and GDSC KJSIT
+                In Collaboration With GDSC CRCE, GDSC UMIT and GDSC KJSIT
               </h3>
+              {/* <div class="footer__cards">
+                  <img src="assets/img/card1.png" alt="" class="footer__card">
+                  <img src="assets/img/card2.png" alt="" class="footer__card">
+                  <img src="assets/img/card3.png" alt="" class="footer__card">
+                  <img src="assets/img/card4.png" alt="" class="footer__card">
+              </div> */}
             </div>
           </div>
           <p className="footer__copy">© Bit N Build. All rigths reserved</p>
         </footer>
-        <a href="#" className="scrollup" id="scroll-up"> 
+
+        <a href="#" className="scrollup" id="scroll-up">
           <i className="ri-arrow-up-fill scrollup__icon" />
         </a>
       </div>
-     </>
- 
+    </>
   );
 }
 
