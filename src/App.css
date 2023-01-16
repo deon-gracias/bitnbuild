@@ -470,7 +470,7 @@ the website, in dark theme
 
 .steps__card {
   background-color: var(--container-color);
-  padding: 2.5rem 3rem 2rem 3rem;
+  padding: 2.5rem 3rem 2rem;
   border-radius: 1rem;
 }
 
