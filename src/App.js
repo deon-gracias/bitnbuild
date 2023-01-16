@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import gif from './assets/home.gif';
 import about from './assets/about.png';
-import About2 from "./assets/about2.png"
+// import About2 from "./assets/about2.png"
 import edu from './assets/edu.jpg';
 import devfolio from './assets/Devfolio_Logo-Colored.png';
 import polygon from './assets/Polygon_Logo-Colored@2x.png'
@@ -79,23 +79,23 @@ const toggleItem = (item) => {
 }
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-const sections = document.querySelectorAll('section[id]')
+// const sections = document.querySelectorAll('section[id]')
 
-function scrollActive() {
-  const scrollY = window.pageYOffset
+// function scrollActive() {
+//   const scrollY = window.pageYOffset
 
-  sections.forEach(current => {
-    const sectionHeight = current.offsetHeight,
-      sectionTop = current.offsetTop - 58,
-      sectionId = current.getAttribute('id')
+//   sections.forEach(current => {
+//     const sectionHeight = current.offsetHeight,
+//       sectionTop = current.offsetTop - 58,
+//       sectionId = current.getAttribute('id')
 
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
-    } else {
-      document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
-    }
-  })
-}
+//     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+//       document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+//     } else {
+//       document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+//     }
+//   })
+// }
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 
 function App() {
@@ -113,8 +113,8 @@ function App() {
     <>
       <header className="header" id="header">
         <nav className="nav container">
-          <a href="#" className="nav__logo">
-            <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/large-purple-square_1f7ea.png" style={{ width: '22px' }} /> BIT N BUILD
+          <a href="#!" className="nav__logo">
+            <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/large-purple-square_1f7ea.png" style={{ width: '22px' }} alt="bit n build logo" /> BIT N BUILD
           </a>
           <div className="nav__menu" id="nav-menu">
             <ul className="nav__list">
@@ -721,10 +721,10 @@ function App() {
         <footer className="footer section">
           <div className="footer__container container grid">
             <div className="footer__content">
-              <a href="#" className="footer__logo">
+              <a href="#!" className="footer__logo">
                 <img
                   src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/large-purple-square_1f7ea.png"
-                  style={{ width: 20 }}
+                  style={{ width: 20 }} alt="bit n build logo"
                 />{" "}
                 BIT N BUILD
               </a>
@@ -794,7 +794,7 @@ function App() {
           <p className="footer__copy">© Bit N Build. All rigths reserved</p>
         </footer>
 
-        <a href="#" className="scrollup" id="scroll-up">
+        <a href="#!" className="scrollup" id="scroll-up">
           <i className="ri-arrow-up-fill scrollup__icon" />
         </a>
       </div>
