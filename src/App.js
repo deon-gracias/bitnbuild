@@ -154,7 +154,7 @@ function App() {
             <img img src={gif} alt="" className="home__img" />
             <div className="home__data">
               <h1 className="home__title">
-                Prize pool of INR 75,000+
+                Prize pool of INR 70,000+
               </h1>
 
               {/* <a href="https://bit-n-build.devfolio.co/">
@@ -270,44 +270,6 @@ function App() {
                 <h3 class="steps__card-title">20:00-21:30</h3>
                 <p class="steps__card-description">
                   Free Dinner. Yay!
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="steps section container">
-          <div className="steps__bg">
-            <h2 className="section__title-center steps__title">
-              Agenda: 29th January
-            </h2>
-            <div className="steps__container grid">
-              <div className="steps__card">
-                <h3 className="steps__card-title">07:30-08:30</h3>
-                <p className="steps__card-description">
-                  Breakfast is on us!
-                </p>
-              </div>
-              <div className="steps__card">
-                <h3 className="steps__card-title">09:00-11:00</h3>
-                <p className="steps__card-description">
-                  Judging Round 1
-                </p></div>
-              <div className="steps__card">
-                <h3 className="steps__card-title">12:30-13:30</h3>
-                <p className="steps__card-description">
-                  Lunch, it's free ofcourse!
-                </p>
-              </div>
-              <div className="steps__card">
-                <h3 className="steps__card-title">14:00-16:00</h3>
-                <p className="steps__card-description">
-                  Final Judging Round
-                </p>
-              </div>
-              <div className="steps__card">
-                <h3 className="steps__card-title">16:30</h3>
-                <p className="steps__card-description">
-                  Finally! Winners are announced.
                 </p>
               </div>
             </div>
