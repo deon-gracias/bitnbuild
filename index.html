@@ -589,7 +589,7 @@
                 </article>
                 <br>
 
-                <h3 class="product__title sponsor__title">Silver Sponsor</h3>
+                <h3 class="product__title sponsor__title">Gold Sponsor</h3>
                 <article class="product__card">
                     <img src="./assets/img/Solana-Colored.png" style="scale: 2.2;" alt="" class="product__img">
                 </article>
@@ -604,6 +604,28 @@
                 <article class="product__card">
                     <img src="./assets/img/Replit-light-background.png" style="scale: 2.2;" alt="" class="product__img">
                 </article>
+                <br>
+
+                <article class="product__card">
+                    <img src="./assets/img/lumos.png" style="scale: 2.2;" alt="" class="product__img">
+                </article>
+                <br>
+
+                <h3 class="product__title sponsor__title">Silver Sponsor</h3>
+                <article class="product__card">
+                    <img src="./assets/img/GMC.png" style="scale: 2.2; width: 50px;" alt="" class="product__img">
+                </article>
+                <br>
+
+                <article class="product__card">
+                    <img src="./assets/img/logo_taskade_white.png" style="scale: 2.2;" alt="" class="product__img">
+                </article>
+                <br>
+
+                <article class="product__card">
+                    <img src="./assets/img/xyz.png" style="scale: 2.2; width: 60px;" alt="" class="product__img">
+                </article>
+                <br>
 
             </div>
         </section>
@@ -637,25 +659,25 @@
                     </div>
                 </div>
 
-                <form action="" class="contact__form">
+                <form method="POST" class="contact__form" id="contact-us-form">
                     <div class="contact__inputs">
                         <div class="contact__content">
-                            <input type="email" placeholder=" " class="contact__input">
-                            <label for="" class="contact__label">Email</label>
+                            <input type="email" placeholder=" " name="email" class="contact__input">
+                            <label for="email" class="contact__label">Email</label>
                         </div>
 
                         <div class="contact__content">
-                            <input type="text" placeholder=" " class="contact__input">
-                            <label for="" class="contact__label">Subject</label>
+                            <input type="text" name="subject" placeholder=" " class="contact__input">
+                            <label for="subject" class="contact__label">Subject</label>
                         </div>
 
                         <div class="contact__content contact__area">
                             <textarea name="message" placeholder=" " class="contact__input"></textarea>
-                            <label for="" class="contact__label">Message</label>
+                            <label for="message" class="contact__label">Message</label>
                         </div>
                     </div>
 
-                    <button class="button button--flex">
+                    <button class="button button--flex" id="contact-us-submit" type="submit">
                         Send Message
                         <i class="ri-arrow-right-up-line button__icon"></i>
                     </button>
